@@ -71,6 +71,7 @@ flags.DEFINE_boolean('record_summaries', True,
 
 FLAGS = flags.FLAGS
 
+
 def main(unused_argv):
   flags.mark_flag_as_required('model_dir')
   flags.mark_flag_as_required('pipeline_config_path')
@@ -109,9 +110,5 @@ def main(unused_argv):
           checkpoint_every_n=FLAGS.checkpoint_every_n,
           record_summaries=FLAGS.record_summaries)
 
-      # Delete unused variables
-      del strategy
-
 if __name__ == '__main__':
-  tf.config.experimental.set_memory_growth(tf.config.list_physical_devices('GPU')[0], True)
   tf.compat.v1.app.run()
