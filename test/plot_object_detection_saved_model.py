@@ -40,7 +40,7 @@ def download_images():
         image_paths.append(str(image_path))
     return image_paths
 
-IMAGE_PATHS = ['images/train/IMG_20230416_082107.jpg']
+IMAGE_PATHS = ['images/2.jpg','images/3.jpg','images/4.jpg']
 
 
 # %%
@@ -210,7 +210,7 @@ for image_path in IMAGE_PATHS:
           category_index,
           use_normalized_coordinates=True,
           max_boxes_to_draw=200,
-          min_score_thresh=.80,
+          min_score_thresh=.50,
           agnostic_mode=False)
 
     plt.figure()
